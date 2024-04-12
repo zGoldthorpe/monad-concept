@@ -53,7 +53,7 @@ By specifying `ret` and `join`, the functor `F` will satisfy the constraint `fun
 
 Although unit and multiplication are the most natural way of defining monads in mathematics, it seems that functional programmers are more interested in `bind`, which is the natural transformation
 ```math
-\operatorname{bind}_{X,Y} : [X, FY] \xrightarrow{F_{X,Y}} {[FX, F(FY)]} \xrightarrow{\mu_{Y,*}} {[FX, FY]}
+\mathrm{bind}_{X,Y} : [X, FY] \xrightarrow{F_{X,Y}} {[FX, F(FY)]} \xrightarrow{\mu_{Y,*}} {[FX, FY]}
 ```
 as it provides a means to embed imperative programs into a functional language (perhaps after uncurrying).
 
@@ -78,7 +78,7 @@ The `cpp` files provide some examples of monads.
 
 | File | Monad |
 |:----:|:----- |
-| `identity.cpp` | The trivial "do nothing" monad induced by $`\operatorname{Id} : \mathbf{Set} \to \mathbf{Set}`$ |
+| `identity.cpp` | The trivial "do nothing" monad induced by $`\mathrm{Id} : \mathbf{Set} \to \mathbf{Set}`$ |
 | `maybe.cpp` | The `Maybe` monad, induced by the forgetful functor $`\mathbf{Set}_*\to\mathbf{Set}`$ from pointed sets. |
 | `vector.cpp` | The `List` monad, induced by the forgetful functor $`\mathbf{Mon}\to\mathbf{Set}`$ from monoids. |
 | `state.cpp` | A `State` monad, induced by the currying adjunction $`(-)\times S : \mathbf{Set}\rightleftarrows\mathbf{Set} : (-)^S`$ for a fixed set $`S`$ |
